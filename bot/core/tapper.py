@@ -49,7 +49,7 @@ class Tapper:
                     raise InvalidSession(self.session_name)
 
             peer = await self.tg_client.resolve_peer('fintopio')
-            link = choices([settings.REF_ID, get_link_code()], weights=[40, 60], k=1)[0]
+            link = settings.REF_ID
             web_view = await self.tg_client.invoke(RequestAppWebView(
                 peer=peer,
                 platform='android',
